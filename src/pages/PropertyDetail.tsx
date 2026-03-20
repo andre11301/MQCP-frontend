@@ -44,7 +44,7 @@ const PropertyDetail: React.FC = () => {
     const [activeTab, setActiveTab] = useState('details');
     const [selectedImageIndex, setSelectedImageIndex] = useState(0);
     const [showContactModal, setShowContactModal] = useState(false);
-    const [isFavorite, setIsFavorite] = useState(false);
+    // const [isFavorite, setIsFavorite] = useState(false);
     const [lightboxOpen, setLightboxOpen] = useState(false);
 
     // Contact form state

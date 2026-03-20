@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 // /import { Search, Map, FileText, TrendingUp, Users, Home as HomeIcon, LayoutGrid, ArrowRight, ChevronDown, Zap, Star, SlidersHorizontal, Globe, Loader2 } from 'lucide-react';
 import { Search, TrendingUp, Home as HomeIcon, LayoutGrid, ChevronDown, Zap, Star, SlidersHorizontal, Globe, Loader2 } from 'lucide-react';
