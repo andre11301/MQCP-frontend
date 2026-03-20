@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, Map, FileText, TrendingUp, Users, Home as HomeIcon, LayoutGrid, ArrowRight, ChevronDown, Zap, Star, SlidersHorizontal, Globe, Loader2 } from 'lucide-react';
+// /import { Search, Map, FileText, TrendingUp, Users, Home as HomeIcon, LayoutGrid, ArrowRight, ChevronDown, Zap, Star, SlidersHorizontal, Globe, Loader2 } from 'lucide-react';
+import { Search, TrendingUp, Home as HomeIcon, LayoutGrid, ChevronDown, Zap, Star, SlidersHorizontal, Globe, Loader2 } from 'lucide-react';
 
 import { useTranslation } from 'react-i18next';
 import api from '../services/api';
@@ -9,9 +10,9 @@ import PropertyCard from '../components/PropertyCard';
 import { useDebounce } from '../hooks/useDebounce';
 
 const Home: React.FC = () => {
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const { t } = useTranslation();
-    const [searchQuery, setSearchQuery] = useState('');
+    // const [searchQuery, setSearchQuery] = useState('');
     const [transactionType, setTransactionType] = useState<'FOR_SALE' | 'FOR_RENT'>('FOR_SALE');
     const [minPrice, setMinPrice] = useState<string>('');
     const [maxPrice, setMaxPrice] = useState<string>('');
@@ -60,7 +61,7 @@ const Home: React.FC = () => {
             const response = await api.get('/properties/public/search', {
                 params: {
                     listingType: transactionType,
-                    keyword: searchQuery || undefined,
+                    // keyword: searchQuery || undefined,
                     area: selectedArea || undefined,
                     type: selectedType || undefined,
                     minPrice: finalMinPrice || undefined,
@@ -90,11 +91,13 @@ const Home: React.FC = () => {
             setLoading(false);
             setLoadingMore(false);
         }
-    }, [transactionType, searchQuery, debouncedMinPrice, debouncedMaxPrice, selectedArea, selectedType, page, sortOrder]);
+        //}, [transactionType, searchQuery, debouncedMinPrice, debouncedMaxPrice, selectedArea, selectedType, page, sortOrder]);
+    }, [transactionType, debouncedMinPrice, debouncedMaxPrice, selectedArea, selectedType, page, sortOrder]);
 
     useEffect(() => {
         fetchProperties();
-    }, [transactionType, debouncedMinPrice, debouncedMaxPrice, selectedArea, selectedType, searchQuery, sortOrder]);
+        //}, [transactionType, debouncedMinPrice, debouncedMaxPrice, selectedArea, selectedType, searchQuery, sortOrder]);
+    }, [transactionType, debouncedMinPrice, debouncedMaxPrice, selectedArea, selectedType, sortOrder]);
 
     useEffect(() => {
         console.log('useEffect page', page);

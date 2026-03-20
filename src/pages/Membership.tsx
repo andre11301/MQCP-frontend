@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Crown, Check, Star, Hexagon, Zap, Shield } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useTranslation } from 'react-i18next';
@@ -13,12 +13,6 @@ const Membership: React.FC = () => {
         navigate(`/payment?plan=${plan}`);
     };
 
-    const getPlanDisplayName = (planType?: string) => {
-        if (!planType) return '';
-        const planKey = `nav.plan_${planType.toLowerCase()}`;
-        return t(planKey, planType);
-    };
-
     return (
         <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
@@ -29,34 +23,6 @@ const Membership: React.FC = () => {
                     </div>
                     <p className="text-gray-500">{t('fsbo.step1_desc')}</p>
                 </div>
-
-                {/* {user?.planType && (
-                    <div className="max-w-7xl mx-auto mb-8">
-                        <div className="bg-white rounded-xl border border-blue-200 p-6 shadow-sm">
-                            <div className="flex items-center justify-between">
-                                <div>
-                                    <h3 className="text-lg font-semibold text-gray-900">{t('nav.current_plan')}</h3>
-                                    <div className="flex items-center gap-3 mt-2">
-                                        <span className="text-2xl font-bold text-blue-600">{getPlanDisplayName(user.planType)}</span>
-                                        <span className="px-3 py-1 bg-blue-100 text-blue-700 text-sm font-medium rounded-full">
-                                            {user.planType}
-                                        </span>
-                                    </div>
-                                </div>
-                                <div className="text-right">
-                                    <p className="text-sm text-gray-500">{t('nav.plan_status')}</p>
-                                    <p className="text-green-600 font-medium">{t('nav.plan_active')}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                )} */}
-
-                {/* <div className="flex justify-end mb-6">
-                    <Link to="/login" className="text-blue-600 hover:underline font-medium">
-                        &larr; Back to Login
-                    </Link>
-                </div> */}
 
                 {/* Pricing Cards */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">

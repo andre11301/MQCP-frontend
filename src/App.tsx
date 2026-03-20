@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useNavigate, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Zap, Globe, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, Star, LogIn, UserPlus, PlusCircle, User, FileText, Crown, LogOut, Info, AlertTriangle } from 'lucide-react';
+import { Zap, Globe, Mail, Phone, MapPin, LogIn, UserPlus, PlusCircle, FileText, Crown, LogOut, Info, AlertTriangle } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from './context/AuthContext';
 import Home from './pages/Home';
@@ -108,12 +108,11 @@ const Header: React.FC = () => {
                         <div className="flex items-center gap-6">
                             <button
                                 onClick={() => {
-                                    //navigate('/create-property');
-                                    // if (user?.planType === 'FREE') {
-                                    //     navigate('/membership');
-                                    // } else {
-                                    //     navigate('/create-property');
-                                    // }
+                                    if (user?.planType === 'FREE') {
+                                        navigate('/membership');
+                                    } else {
+                                        navigate('/create-property');
+                                    }
                                 }}
                                 className="flex items-center gap-2 px-4 py-2 bg-[#1a56db] text-white rounded-lg text-sm font-medium transition-colors hover:bg-blue-700"
                             >

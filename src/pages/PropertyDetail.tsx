@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-    Heart, Share2, Camera, Bed, Bath, Maximize2, MapPin, Phone, Mail,
+    Camera, Bed, Bath, MapPin, Phone, Mail,
     Globe, X, ChevronLeft, ChevronRight, Home as HomeIcon,
     Ruler, FileText, Map, Send
 } from 'lucide-react';

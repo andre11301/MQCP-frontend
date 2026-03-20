@@ -23,7 +23,7 @@ interface PropertyCardProps {
 const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
     const { t } = useTranslation();
     const navigate = useNavigate();
-    const [isFavorite, setIsFavorite] = useState(false);
+    // const [isFavorite, setIsFavorite] = useState(false);
 
     const formattedPrice = new Intl.NumberFormat('fr-CA', {
         style: 'currency',

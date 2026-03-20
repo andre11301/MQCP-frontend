@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
 import api from '../services/api';
-import { User, Mail, Phone, Lock, Globe, CheckCircle } from 'lucide-react';
+import { User, Mail, Phone, Lock, CheckCircle } from 'lucide-react';
 
 import { useTranslation } from 'react-i18next';
 
